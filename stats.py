@@ -28,11 +28,11 @@ def count_characters(bookpath):
 def sort_on(items):
     return items["num"]
 
-def report(bookpath):
-    print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {bookpath}")
+def sorted_dict(bookpath):
+    sorting = count_characters(bookpath)
+    result = [{"char": c, "num": n} for c, n in sorting.items()]
+    result.sort(reverse=True, key=sort_on)
+    return result
 
-    print("----------- Word Count ----------")
-    print(f"Found {count_words(bookpath)} total words")
 
-    print("--------- Character Count -------")
+    
